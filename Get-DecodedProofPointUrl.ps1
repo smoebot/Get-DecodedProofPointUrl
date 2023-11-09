@@ -27,8 +27,8 @@ param (
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12  # Force TLS 1.2 
 
 # Variables for connection to API - Generate API secrets from ProofPoint TAP console
-$proofPointServicePrincipal = ''
-$proofPointSecret = ''
+$proofPointServicePrincipal = "<service-principal-here>"
+$proofPointSecret = "<secret-here>"
 $creds = "$($proofPointServicePrincipal):$($proofPointSecret)"
 $encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($creds))
 $proofPointApi = "https://tap-api-v2.proofpoint.com/v2/url/decode"
